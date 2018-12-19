@@ -11,11 +11,14 @@ chai.use(sinonChai);
 
 describe('Album', () => {
   let stubedFetch;
-  let promise;
 
   beforeEach(() => {
     stubedFetch = sinon.stub(global, 'fetch');
-    promise = stubedFetch.resolves({ json: () => ({ album: 'name' }) });
+    stubedFetch.resolves({
+      json: () => {
+        JSON.stringify({ album: 'name' });
+      },
+    });
   });
 
   afterEach(() => {
