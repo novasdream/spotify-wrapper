@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Wrapper Test</title>
+</head>
+<body>
+
+<div id="albums"></div>
+
+<script src="../dist/spotify-wrapper.umd.js"></script>
+
+<script>
+  const albums = spotifyWrapper({token: "BQCgLkxKS5PoA6IUrW1g4B6ZBLNX1c5NflOvisHvyxNzVYYW9eff7J-S2ZZGau3zV-awJY4kpLYWwba2pSWE0-rlBsNTQhS_6QpXfpG3zViCUqEzAmW0jr7tP68CkaDk8od6WKrDBR-kbe-VZjS2J26TdKDKCC2B5oy-fZ33-is9whmNcn5nEET8mfFFbYf_CCPjTrDuybJPx6itdOyVa1NRfxaZ7WvmboW25I6Pa-QhHghYGfd5XELjR6yCaalI8xfYOQLzMFeCSej9"}).searchAlbums('Incubus');
+  const albumsEl = document.getElementById('albums');
+
+  albums
+    .then(data => {
+      markup = data.albums.items.map(item =>
+        `<img src='${item.images[0].url}' alt='${item.name}' />`
+      ).join('');
+
+      albumsEl.innerHTML = markup;
+    })
+</script>
+</body>
+</html>
