@@ -1,5 +1,7 @@
 # Project Title
 
+[![Coverage Status](https://coveralls.io/repos/github/novasdream/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/novasdream/spotify-wrapper?branch=master)
+
 One Paragraph of project description goes here
 
 ## Getting Started
